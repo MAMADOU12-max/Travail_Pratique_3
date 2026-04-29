@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox alignment="CENTER" prefHeight="500.0" prefWidth="500.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25">
+
+    <Label style="-fx-text-fill: #4CAF50; -fx-font-size: 28px; -fx-font-weight: bold;" text="Serpent et Échelles">
+        <font>
+            <Font name="Webdings" size="25.0" />
+        </font>
+    </Label>
+
+</VBox>
