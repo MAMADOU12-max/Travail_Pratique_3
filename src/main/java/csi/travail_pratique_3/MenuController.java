@@ -9,7 +9,7 @@ import javafx.scene.layout.BorderPane;
 
 import java.util.Optional;
 
-public class HelloController {
+public class MenuController {
 
     @FXML
     private BorderPane root; // conteneur principal où on affiche les vues
@@ -26,6 +26,31 @@ public class HelloController {
         chargerVue("balles_rebondissantes-view.fxml");
     }
 
+
+    @FXML
+    private void allerBallesRebondissantes() {
+        chargerVue("balles_rebondissantes-view.fxml");
+    }
+
+    /**
+     * allerCiblesAtaper
+     * privée (private)
+     * Permet d'afficher la page du jeu cibles à taper.
+     */
+    @FXML
+    private void allerCiblesAtaper() {
+        chargerVue("cibles_a_taper-view.fxml");
+    }
+
+    /**
+     * allerRegles
+     * privée (private)
+     * Permet d'afficher la page des règles du jeu cibles à taper.
+     */
+    @FXML
+    private void allerRegles() {
+        chargerVue("regles_jeu_cibles-view.fxml");
+    }
     /**
      * quitter
      * publique (public)
