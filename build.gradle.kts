@@ -32,7 +32,7 @@ application {
 
 javafx {
     version = "25" // configurer
-    modules = listOf("javafx.controls", "javafx.fxml")
+    modules = listOf("javafx.controls", "javafx.fxml", "javafx.media")
 }
 
 dependencies {

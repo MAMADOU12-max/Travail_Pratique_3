@@ -1,0 +1,140 @@
+/* Bouton Recommencer */
+/* Panneau blanc du haut */
+.panneau-info {
+    -fx-background-color: rgba(255, 255, 255, 0.85);
+    -fx-background-radius: 15;
+    -fx-padding: 15;
+}
+
+/* Étiquette du score */
+.etiquette-score {
+    -fx-text-fill: #c0392b;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+/* Étiquette du temps */
+.etiquette-temps {
+    -fx-text-fill: #2d3436;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+/* Étiquette du statut (message au joueur) */
+.etiquette-statut {
+    -fx-text-fill: #27ae60;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+/* Style commun à tous les boutons */
+.bouton-style {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-padding: 6px 15px;
+    -fx-background-radius: 15;
+    -fx-cursor: hand;
+}
+. bouton-menu {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-padding: 3px 10px;
+    -fx-background-radius: 5;
+    -fx-font-weight: bold;
+}
+
+/* Bouton bleu */
+.bouton-recommencer, .ajout-balles, .regles-menu {
+    -fx-background-color: #2980b9;
+}
+
+. cibles-menu {
+    -fx-background-color: #1a2c3c;
+}
+
+. balles-menu {
+    -fx-background-color: #b99529;
+}
+
+/* Bouton vert */
+.ajout-balle {
+    -fx-background-color: green;
+}
+
+/* Bouton rouge */
+.retirer-balle, .quitter-menu {
+    -fx-background-color: red;
+}
+
+
+/* Fond de la grille */
+.panneau-grille {
+    -fx-background-color: rgba(0, 0, 0, 0.1);
+    -fx-background-radius: 15;
+    -fx-padding: 20;
+}
+
+/* Bouton de la grille — état normal */
+.bouton-normal {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #2d3436;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 15;
+    -fx-border-color: #b2bec3;
+    -fx-border-radius: 15;
+    -fx-border-width: 2;
+    -fx-pref-width: 100;
+    -fx-pref-height: 100;
+    -fx-cursor: hand;
+}
+
+/* Bouton cible — en vert */
+.bouton-cible {
+    -fx-background-color: #00b894;
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 15;
+    -fx-border-color: #55efc4;
+    -fx-border-radius: 15;
+    -fx-border-width: 3;
+    -fx-pref-width: 100;
+    -fx-pref-height: 100;
+    -fx-cursor: hand;
+}
+
+/* Bouton cliqué par erreur — en rouge */
+.bouton-erreur {
+    -fx-background-color: #d63031;
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 15;
+    -fx-border-color: #ff7675;
+    -fx-border-radius: 15;
+    -fx-border-width: 2;
+    -fx-pref-width: 100;
+    -fx-pref-height: 100;
+}
+
+/* ------Balles rebondissantes  ------------*/
+.zone-Balles {
+    -fx-border-color: black;
+    -fx-border-width: 2;
+}
+
+/* ----------------------- Menu   ---------- ------------*/
+
+. vbox-menu {
+    -fx-padding: 20;
+    -fx-background-color:#2c3e50;
+}
+
+.bouton-normal,
+.bouton-cible,
+.bouton-erreur {
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-content-display: center;
+}
