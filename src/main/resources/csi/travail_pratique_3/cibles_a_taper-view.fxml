@@ -1,11 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
+<VBox alignment="CENTER" spacing="15.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csi.travail_pratique_3.CiblesController">
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label text="Cibles a taper" />
+
+      <!-- Panneau d'information en haut -->
+      <VBox alignment="CENTER" prefWidth="360.0" spacing="10.0" styleClass="panneau-info">
+         <children>
+            <Label text="Cibles a taper" textFill="#ffbc2b">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Label>
+
+            <!-- Score -->
+            <Label fx:id="etiquetteScore" styleClass="etiquette-score" text="Score : 0" />
+
+            <!-- Temps restant -->
+            <Label fx:id="etiquetteTemps" styleClass="etiquette-temps" text="Temps : 30s" />
+
+            <!-- Message au joueur -->
+            <Label fx:id="etiquetteStatut" styleClass="etiquette-statut" text="Appuie sur la cible verte !" />
+            <HBox alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="200.0" style="-fx-spacing: 80; -fx-alignment: center;">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label />
+      
+                  <!-- Bouton pour recommencer la partie -->
+                  <Button fx:id="boutonRecommencer" onAction="#recommencer" styleClass="bouton-style, bouton-recommencer" text="Recommencer">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+      
+                        <!-- Liste déroulante pour choisir le thème -->
+                  <ComboBox fx:id="seleteurTheme" promptText="Choisir un thème" />
+               </children>
+            </HBox>
+
+         </children>
+      </VBox>
+
+      <!-- Grille 3x3 — les boutons sont ajoutés dynamiquement dans initialize() -->
+      <GridPane fx:id="grilleJeu" alignment="CENTER" hgap="10.0" styleClass="panneau-grille" vgap="10.0">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints prefHeight="100.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints prefHeight="100.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints prefHeight="100.0" valignment="CENTER" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+
    </children>
 </VBox>

@@ -1,11 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 
+<VBox alignment="CENTER" spacing="20.0"
+      styleClass="fond-principal"
+      xmlns="http://javafx.com/javafx/21">
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label text="Regles du jeu" />
+
+      <!-- Titre principal -->
+      <Label styleClass="titre-principal" text="🎯 Règles du Jeu" />
+
+      <!-- Ligne décorative -->
+      <Rectangle styleClass="ligne-decorative" height="3.0" width="350.0" />
+
+      <!-- Description générale -->
+      <Label styleClass="description-generale"
+             text="Clique sur le bouton VERT avant qu'il se déplace !"
+             wrapText="true" />
+
+      <!-- Panneau contenant toutes les règles -->
+      <VBox spacing="12.0" styleClass="panneau-regles">
+         <children>
+
+            <!-- Règle 1 -->
+            <HBox alignment="CENTER_LEFT" spacing="12.0">
+               <children>
+                  <Label styleClass="icone-regle" text="✅" />
+                  <VBox>
+                     <children>
+                        <Label styleClass="titre-regle" text="Clique sur la cible verte" />
+                        <Label styleClass="texte-regle" wrapText="true"
+                               text="Un bouton vert apparaît aléatoirement dans la grille. Clique dessus pour marquer un point." />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+
+            <!-- Règle 2 -->
+            <HBox alignment="CENTER_LEFT" spacing="12.0">
+               <children>
+                  <Label styleClass="icone-regle" text="⏱" />
+                  <VBox>
+                     <children>
+                        <Label styleClass="titre-regle" text="La cible bouge toutes les 2 secondes" />
+                        <Label styleClass="texte-regle" wrapText="true"
+                               text="Si tu ne cliques pas à temps, la cible verte se déplace automatiquement." />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+
+            <!-- Règle 3 -->
+            <HBox alignment="CENTER_LEFT" spacing="12.0">
+               <children>
+                  <Label styleClass="icone-regle" text="❌" />
+                  <VBox>
+                     <children>
+                        <Label styleClass="titre-regle" text="Évite les mauvaises cases" />
+                        <Label styleClass="texte-regle" wrapText="true"
+                               text="Cliquer sur une mauvaise case te fait perdre 1 seconde de temps." />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+
+            <!-- Règle 4 -->
+            <HBox alignment="CENTER_LEFT" spacing="12.0">
+               <children>
+                  <Label styleClass="icone-regle" text="⏰" />
+                  <VBox>
+                     <children>
+                        <Label styleClass="titre-regle" text="Tu as 30 secondes" />
+                        <Label styleClass="texte-regle" wrapText="true"
+                               text="Le jeu se termine quand le chrono atteint 0. Fais le meilleur score possible !" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+
+            <!-- Règle 5 -->
+            <HBox alignment="CENTER_LEFT" spacing="12.0">
+               <children>
+                  <Label styleClass="icone-regle" text="🎵" />
+                  <VBox>
+                     <children>
+                        <Label styleClass="titre-regle" text="Musique et sons" />
+                        <Label styleClass="texte-regle" wrapText="true"
+                               text="Une musique joue en fond. Un son indique si tu as bien ou mal cliqué." />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+
+         </children>
+      </VBox>
+
+      <!-- Ligne décorative -->
+      <Rectangle styleClass="ligne-decorative" height="3.0" width="350.0" />
+
+      <!-- Conseil final -->
+      <Label styleClass="conseil-final"
+             text="💡 Conseil : Reste concentré et clique vite !" />
+
    </children>
 </VBox>
