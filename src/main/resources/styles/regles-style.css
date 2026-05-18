@@ -1,0 +1,52 @@
+/* ============================================================
+   STYLES — Page des règles du jeu
+   ============================================================ */
+
+.fond-principal {
+    -fx-background-color: linear-gradient(to bottom, #1a1a2e, #16213e);
+    -fx-padding: 30;
+}
+
+.titre-principal {
+    -fx-text-fill: #ffbc2b;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.ligne-decorative {
+    -fx-fill: #27ae60;
+}
+
+.description-generale {
+    -fx-text-fill: #bdc3c7;
+    -fx-font-size: 14px;
+    -fx-font-style: italic;
+}
+
+.panneau-regles {
+    -fx-background-color: rgba(255, 255, 255, 0.07);
+    -fx-background-radius: 15;
+    -fx-padding: 20;
+}
+
+.icone-regle {
+    -fx-font-size: 18px;
+    -fx-text-fill: #ffbc2b;
+}
+
+.titre-regle {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.texte-regle {
+    -fx-text-fill: #bdc3c7;
+    -fx-font-size: 12px;
+}
+
+.conseil-final {
+    -fx-text-fill: #f39c12;
+    -fx-font-size: 13px;
+    -fx-font-style: italic;
+}

@@ -1,5 +1,6 @@
 package csi.travail_pratique_3;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,8 +13,10 @@ import java.util.Optional;
 public class MenuController {
 
     @FXML
-    private BorderPane root; // conteneur principal où on affiche les vues
+    private BorderPane root;  // conteneur principal où on affiche les vues
 
+    // Une seule référence au controller du jeu cibles
+    private CiblesController ciblesController = null;
 
     /**
      * initialize
@@ -26,9 +29,28 @@ public class MenuController {
         chargerVue("balles_rebondissantes-view.fxml");
     }
 
+    // Arrête le jeu cibles a taper et l'audio si le jeu cibles est actif
+    /**
+     * arreterJeuSiActif
+     * privée (private)
+     * Méthode appelée pour arrêter la musique et l'audio
+     * si le jeu cible à taper est actif
+     */
+    private void arreterJeuSiActif() {
+        if (ciblesController != null) {
+            ciblesController.arreterJeu();
+            ciblesController = null;
+        }
+    }
 
+    /**
+     * allerBallesRebondissantes
+     * privée (private)
+     * Permet d'afficher la page du jeu balles rebondissantes
+     */
     @FXML
     private void allerBallesRebondissantes() {
+        arreterJeuSiActif();
         chargerVue("balles_rebondissantes-view.fxml");
     }
 
@@ -39,37 +61,51 @@ public class MenuController {
      */
     @FXML
     private void allerCiblesAtaper() {
-        chargerVue("cibles_a_taper-view.fxml");
+        arreterJeuSiActif();
+        try {
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource("/csi/travail_pratique_3/cibles_a_taper-view.fxml")
+            );
+            Parent vue = loader.load();
+            root.setCenter(vue);
+
+            // Sauvegarder le controller pour pouvoir l'arrêter plus tard
+            ciblesController = loader.getController();
+
+            Platform.runLater(() -> ciblesController.setScene(root.getScene()));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
      * allerRegles
      * privée (private)
-     * Permet d'afficher la page des règles du jeu cibles à taper.
+     * Permet d'afficher la page des régles du jeu cibles à taper.
      */
     @FXML
     private void allerRegles() {
+        arreterJeuSiActif();
         chargerVue("regles_jeu_cibles-view.fxml");
     }
+
     /**
      * quitter
-     * publique (public)
-     * Affiche une alerte de confirmation avant de quitter l'application.
+     * privée (private)
+     * Permet de quitter l'application. Elle demande une confirmation.
      */
     @FXML
     void quitter() {
-
-        // Création de l'alerte
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Quitter");
         alert.setHeaderText("Voulez-vous vraiment quitter le jeu?");
         alert.setContentText("Confirmez votre choix.");
 
-        // Récupération la réponse de l'utilisateur
         Optional<ButtonType> choix = alert.showAndWait();
 
-        // Si l'utilisateur a choisi de quitter
         if (choix.isPresent() && choix.get() == ButtonType.OK) {
+            arreterJeuSiActif(); // arrêter proprement avant de quitter
             System.exit(0);
         }
     }
@@ -77,18 +113,16 @@ public class MenuController {
     /**
      * chargerVue
      * privée (private)
-     * Charge une vue FXML dans le centre du BorderPane.
-     * @param fxml Nom du fichier FXML à charger.
+     * Permet de charger les differentes pages de notre menu.
      */
     private void chargerVue(String fxml) {
         try {
-            // Chargement du fichier FXML
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/csi/travail_pratique_3/" + fxml));
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource("/csi/travail_pratique_3/" + fxml)
+            );
             Parent view = loader.load();
-            // Placement de la vue au centre du BorderPane
             root.setCenter(view);
         } catch (Exception e) {
-            // Affiche l'erreur en cas de problème
             e.printStackTrace();
         }
     }
